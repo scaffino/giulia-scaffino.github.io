@@ -1,0 +1,172 @@
+<!-- library.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #ffffff;
+        }
+    
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        h1 {
+            font-size: 2.5em; /* Increase the size of the main title */
+            color: #333;
+        }
+    
+        section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        h2 {
+            font-size: 1.8em; /* Set a smaller size for section titles */
+            color: #333;
+            border-bottom: 2px solid #008080;
+            padding-bottom: 5px;
+        }
+    
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;           /* Remove default padding */
+        }
+    
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0; /* Divider between entries */
+        }
+    
+        li:last-child {
+            border-bottom: none; /* Remove divider from last entry */
+        }
+    
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .year-filter {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    
+        .back-link {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #008080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    
+        .back-link:hover {
+            background-color: #005757; /* Darker shade on hover */
+        }
+
+        p {
+            color: #000202; /* Change this color to whatever you prefer */
+            font-size: 1.2em; /* Optional: Adjust font size if needed */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-book"></i> My Library</h1>
+        <p>Explore my favorite reads divided by genre</p>
+    </header>
+
+    <div class="year-filter">
+        <label for="year-select">Filter by Year I've read the book:</label>
+        <select id="year-select">
+            <option value="">All</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <!-- Add more years as needed -->
+        </select>
+    </div>
+
+    <section id="graphic-novels">
+        <h2>Graphic Novels</h2>
+        <ul>
+            <li><strong>Graphic Novel Title 1</strong> by Author A (2021)</li>
+            <li><strong>Graphic Novel Title 2</strong> by Author B (2022)</li>
+            <li><strong>Graphic Novel Title 3</strong> by Author C (2023)</li>
+            <!-- Add more graphic novels -->
+        </ul>
+    </section>
+
+    <section id="fiction">
+        <h2>Fiction</h2>
+        <ul>
+            <li><strong>Fiction Book Title 1</strong> by Author D (2021)</li>
+            <li><strong>Fiction Book Title 2</strong> by Author E (2022)</li>
+            <li><strong>Fiction Book Title 3</strong> by Author F (2023)</li>
+            <!-- Add more fiction books -->
+        </ul>
+    </section>
+
+    <section id="non-fiction">
+        <h2>Non-Fiction</h2>
+        <ul>
+            <li><strong>Non-Fiction Title 1</strong> by Author G (2021)</li>
+            <li><strong>Non-Fiction Title 2</strong> by Author H (2022)</li>
+            <li><strong>Non-Fiction Title 3</strong> by Author I (2023)</li>
+            <!-- Add more non-fiction books -->
+        </ul>
+    </section>
+
+    <section id="future reads">
+        <h2>Future Reads</h2>
+        <ul>
+            <li><strong>Non-Fiction Title 1</strong> by Author G (2021)</li>
+            <li><strong>Non-Fiction Title 2</strong> by Author H (2022)</li>
+            <li><strong>Non-Fiction Title 3</strong> by Author I (2023)</li>
+            <!-- Add more non-fiction books -->
+        </ul>
+    </section>
+
+    <footer>
+     <a href="https://www.goodreads.com/user/show/103714540-giuliascaffino" class="back-link" target="_blank">
+            <i class="fa-brands fa-goodreads"></i> Connect with me on Goodreads </a>
+    <br> <!-- Line break for spacing -->
+        <a href="index.html" class="back-link">Back to Home</a>
+    </footer>
+    
+    <script>
+        const yearSelect = document.getElementById('year-select');
+        const sections = document.querySelectorAll('section');
+
+        yearSelect.addEventListener('change', (event) => {
+            const selectedYear = event.target.value;
+
+            sections.forEach(section => {
+                const items = section.querySelectorAll('li');
+                items.forEach(item => {
+                    if (selectedYear === '' || item.textContent.includes(`(${selectedYear})`)) {
+                        item.style.display = 'block'; // Show item
+                    } else {
+                        item.style.display = 'none'; // Hide item
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
