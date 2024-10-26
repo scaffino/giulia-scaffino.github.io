@@ -34,7 +34,7 @@
         }
     
         h2 {
-            font-size: 1.8em; /* Set a smaller size for section titles */
+            font-size: 1em; /* Set a smaller size for section titles */
             color: #333;
             border-bottom: 2px solid #008080;
             padding-bottom: 5px;
@@ -47,7 +47,7 @@
     
         li {
             padding: 10px;
-            border-bottom: 1px solid #e0e0e0; /* Divider between entries */
+            border-bottom: 0.7px solid #e0e0e0; /* Divider between entries */
         }
     
         li:last-child {
@@ -95,9 +95,11 @@
         <label for="year-select">Filter by Year I've read the book:</label>
         <select id="year-select">
             <option value="">All</option>
+            <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
+            <option value="2024">2024</option>
             <!-- Add more years as needed -->
         </select>
     </div>
@@ -105,9 +107,7 @@
     <section id="graphic-novels">
         <h2>Graphic Novels</h2>
         <ul>
-            <li><strong>Graphic Novel Title 1</strong> by Author A (2021)</li>
-            <li><strong>Graphic Novel Title 2</strong> by Author B (2022)</li>
-            <li><strong>Graphic Novel Title 3</strong> by Author C (2023)</li>
+            <li><strong>Kobane Calling </strong> by Zerocalcare (2020)</li>
             <!-- Add more graphic novels -->
         </ul>
     </section>
@@ -115,29 +115,31 @@
     <section id="fiction">
         <h2>Fiction</h2>
         <ul>
-            <li><strong>Fiction Book Title 1</strong> by Author D (2021)</li>
-            <li><strong>Fiction Book Title 2</strong> by Author E (2022)</li>
-            <li><strong>Fiction Book Title 3</strong> by Author F (2023)</li>
+            <li><strong> Words of Radiance (The Stormlight Archive, #2) </strong> by Brandon Sanderson (2023)</li>
+            <li><strong> The Way of Kings (The Stormlight Archive, #1)</strong> by Brandon Sanderson (2023)</li>
+            <li><strong> Piranesi</strong> by Susanna Clarke (2022)</li>
+            <li><strong> The Left Hand of Darkness</strong>  by Ursula Le Guin (2021)</li>
+            <li><strong> Mists of Avalon</strong> by Marion Zimmer Bradley (2021)</li>
             <!-- Add more fiction books -->
+        </ul>
+    </section>
+
+    <section id="memoirs">
+        <h2>Memoirs</h2>
+        <ul>
+            <li><strong> Ricordatemi come vi pare. In memoria di me</strong> by Michela Murgia (2024)</li>
+            <li><strong> Educated</strong> by Tara Westofer (2021)</li>
+            <li><strong>In the Dream House</strong> by Carmen Maria Machado (2022)</li>
+            <!-- Add more non-fiction books -->
         </ul>
     </section>
 
     <section id="non-fiction">
         <h2>Non-Fiction</h2>
         <ul>
-            <li><strong>Non-Fiction Title 1</strong> by Author G (2021)</li>
-            <li><strong>Non-Fiction Title 2</strong> by Author H (2022)</li>
-            <li><strong>Non-Fiction Title 3</strong> by Author I (2023)</li>
-            <!-- Add more non-fiction books -->
-        </ul>
-    </section>
-
-    <section id="future reads">
-        <h2>Future Reads</h2>
-        <ul>
-            <li><strong>Non-Fiction Title 1</strong> by Author G (2021)</li>
-            <li><strong>Non-Fiction Title 2</strong> by Author H (2022)</li>
-            <li><strong>Non-Fiction Title 3</strong> by Author I (2023)</li>
+            <li><strong> Sapiens: A Brief History of Humankind</strong> by Yuval Noah Harari (2020)</li>
+            <li><strong>Stolen Focus: Why You Can't Pay Attention— and How to Think Deeply Again </strong> by Joann Harari (2023)</li>
+            <li><strong> Spillover: Animal Infections and the Next Human Pandemic </strong> by David Quamen (2020)</li>
             <!-- Add more non-fiction books -->
         </ul>
     </section>
@@ -149,6 +151,8 @@
         <a href="index.html" class="back-link">Back to Home</a>
     </footer>
     
+
+
     <script>
         const yearSelect = document.getElementById('year-select');
         const sections = document.querySelectorAll('section');
